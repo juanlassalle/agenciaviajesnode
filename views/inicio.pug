@@ -1,0 +1,42 @@
+extends ./layout/index
+
+block slider 
+    div(class="slider")
+        h1 Rio de Janeiro 
+        em aventura
+
+block contenido
+    main(class="container mt-5")
+        h2(class="text-center mb-5") Sobre Nosotros
+        div(class="row mb-5")
+            div(class="col-md-6")
+                p Pellentesque ut ante elit. Nulla faucibus quam quis orci congue pharetra convallis sed sapien. Duis arcu eros, lobortis et iaculis sed, cursus sit amet dui. Donec ac nulla sed lorem commodo ullamcorper. Duis laoreet rutrum risus id vestibulum. Quisque porttitor leo id ex tempus, ut feugiat turpis porta. Fusce non consectetur nunc. Aliquam eget sem quis enim pulvinar iaculis. Phasellus bibendum fermentum metus quis pretium.
+                p Aliquam mattis congue enim, rhoncus tincidunt felis vulputate a. Maecenas a luctus nisi. Quisque eget dui dui. Vestibulum orci dolor, eleifend quis metus et, imperdiet ultrices augue. Mauris pretium, tortor quis interdum posuere, nisi odio aliquet urna, eget feugiat lectus orci sed mi. Sed sed nulla sem. Cras molestie neque eget mi dictum, ac finibus urna ultricies. Nam turpis sem, faucibus vel finibus ut, blandit nec erat
+            div(class="col-md-6")
+                img(src="/img/inicio_nosotros.jpg", alt="imagen nosotros", class="img-fluid")
+
+        include ./layout/bloque_viajes
+
+    div(class="descuento")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-6")
+                    div(class="contenido")
+                        h3 5% de Descuento 
+                        p(class="titulo")
+                        p(class="fecha") 31 de Diciembre de 2023 - 1 de Marzo 2024
+                        p(class="precio") 2500 USD
+
+    div(class="container")
+        h2(class="mt-5 text-center") Testimoniales
+        blockquote(class="text-center") Lee sobre nuestros clientes y sus experiencias 
+        div(class="row testimoniales")
+            each testimonial in testimoniales 
+                div(class="col-md col-lg-4 mb-4")
+                    div(class="card")
+                        div(class="card-body")
+                            blockquote(class="blockquote")
+                            p(class="mb-0")
+                                | #{testimonial.mensaje} 
+                            footer(class="blockquote-footer")
+                                | #{testimonial.nombre}
